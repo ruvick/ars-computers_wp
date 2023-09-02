@@ -70,7 +70,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/01.webp" type="image/webp"><img src="img/card/01.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/01.jpg" alt=""></picture> 
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -90,7 +90,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/02.webp" type="image/webp"><img src="img/card/02.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/02.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -110,7 +110,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/03.webp" type="image/webp"><img src="img/card/03.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/03.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -130,7 +130,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/04.webp" type="image/webp"><img src="img/card/04.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/04.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -150,7 +150,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/05.webp" type="image/webp"><img src="img/card/05.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/05.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -170,7 +170,7 @@
 			<div class="products-sec__column">
 				<div class="products-sec__card">
 					<a href="catalog.html" class="products-sec__card-img _ibg">
-						<picture><source srcset="img/card/06.webp" type="image/webp"><img src="img/card/06.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/06.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/06.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title">
@@ -238,7 +238,7 @@
 			<div class="completed-projects__column">
 				<a href="service.html" class="completed-projects__card">
 					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="img/completed/01.webp" type="image/webp"><img src="img/completed/01.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/01.jpg" alt=""></picture>
 					</div>
 					<div class="completed-projects__card-descp completed-projects__card-descp_red">
 						<h5 class="completed-projects__card-descp-title">
@@ -252,7 +252,7 @@
 			<div class="completed-projects__column">
 				<a href="service.html" class="completed-projects__card">
 					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="img/completed/02.webp" type="image/webp"><img src="img/completed/02.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/02.jpg" alt=""></picture>
 					</div>
 					<div class="completed-projects__card-descp">
 						<h5 class="completed-projects__card-descp-title">
@@ -266,7 +266,7 @@
 			<div class="completed-projects__column">
 				<a href="service.html" class="completed-projects__card">
 					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="img/completed/03.webp" type="image/webp"><img src="img/completed/03.jpg?_v=1693674569456" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/03.jpg?" alt=""></picture>
 					</div>
 					<div class="completed-projects__card-descp">
 						<h5 class="completed-projects__card-descp-title">

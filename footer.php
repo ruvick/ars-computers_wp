@@ -3,8 +3,7 @@
 
 		<div class="footer__row d-flex">
 
-			<a href="index.html" class="logo-icon footer__logo">
-				<!-- <? bloginfo("url"); ?> -->
+			<a href="<? bloginfo("url"); ?>" class="logo-icon footer__logo">
 				<p class="logo-icon__text">АРС КОМПЬЮТЕРЫ <span>Работаем с 1992 года</span></p>
 			</a>
 
