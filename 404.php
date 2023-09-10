@@ -7,18 +7,12 @@
 
 <section class="page-text section content">
 	<div class="_container">
-		<p id="breadcrumbs">
-			<span>
-				<span>
-					<a href="index.html">
-						Главная
-					</a> /
-					<span class="breadcrumb_last" aria-current="page"> 
-						Страница 404
-					</span>
-				</span>
-			</span>
-		</p>
+
+		<?php
+			if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+			}
+		?> 
 
 		<h1 class = "h404">404</h1>
 		<h2>Запрашиваемая страница не была найдена</h2>
