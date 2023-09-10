@@ -16,21 +16,30 @@
 					
 					<div class="headen_form_blk">
 						<p class="popup__notific">Оставьте заявку и мы свяжемся с Вами в течении 15 минут</p>
-						<form action="#" class="form universal_send_form">
+						<form id="callback_form" class="form">
 							
 							<div class="SendetMsg form_msg" style="display:none;">
 								Ваше сообщение успешно отправлено.
 							</div>
 
-							<div class="form__line">
-								<input id="name" autocomplete="off" type="text" name="name" data-error="Ошибка" data-value="Имя" class="popup__form-input input _req">
+							<div class="form__line headen_form_blk">
+								<input type="hidden" name = "form_name" data-valuem = "Название формы" value = "Заказать звонок">
+								<input type="hidden" name = "page_lnk" data-valuem = "Адрес страницы" value = "<? echo (is_home())?"http://arscomp.ru/":get_the_permalink()?>">
+								<input type="text" name="name" required data-valuem = "Имя*" placeholder="Телефон*" class="popup__form-input input">
+								<input type="tel" name="tel" required data-valuem = "Телефон*" placeholder="Телефон*" class="popup__form-input input">
+								<input type="email" name="email" required data-valuem = "Email*" placeholder="Email*" class="popup__form-input input">
+
+								<!-- <input id="name" autocomplete="off" type="text" name="name" data-error="Ошибка" data-value="Имя" class="popup__form-input input _req">
 								<input id="tel2" autocomplete="off" type="text" name="tel" data-error="Ошибка" data-value="Телефон" class="popup__form-input input _phone _req">
-								<input id="email" autocomplete="off" type="text" name="email" data-error="Ошибка" data-value="Email" class="popup__form-input input _req">
-							</div>
+								<input id="email" autocomplete="off" type="text" name="email" data-error="Ошибка" data-value="Email" class="popup__form-input input _req"> -->
+							
 							<p class="popup__policy">Заполняя данную форму вы соглашаетесь с <a href="#">политикой
 									конфиденциальности</a></p>
-							<button type = "button" class="popup__form-btn form__btn btn u_send">Заказать</button>
+							<button type="submit" class="popup__form-btn form__btn btn newButton new_send_btn" data-formmsg="Заказать звонок"
+	          		data-formid="callback_form">Отправить заявку</button>
+								</div>
 						</form>
+						
 					</div>
 				</div>
 			</div>

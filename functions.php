@@ -35,32 +35,32 @@ add_action('after_setup_theme', function () {
 	register_nav_menus([
 		// 'menu_hot' => 'Меню актуальных предложений (рядом с каталогом)',
 		'menu_main' => 'Меню основное',
-		'menu_cat' => 'Меню каталог (в подвале)',
-		'menu_company' => 'Меню о компании (в подвале)',
+		// 'menu_cat' => 'Меню каталог (в подвале)',
+		// 'menu_company' => 'Меню о компании (в подвале)',
 		// 'menu_corp' => 'Общекорпоративное меню (верхняя шапка)', 
 	]);
 });
 
 
 // Добавление стилей к пунктам меню li
-add_filter('nav_menu_css_class', 'change_menu_item_css_classes', 10, 4);
+// add_filter('nav_menu_css_class', 'change_menu_item_css_classes', 10, 4);
 
-function change_menu_item_css_classes($classes, $item, $args, $depth)
-{
-	if ($item->ID  && 'menu_cat' === $args->theme_location) {
-		$classes[] = 'footer-top-wrap-list-item-sublist-item';
-	}
+// function change_menu_item_css_classes($classes, $item, $args, $depth)
+// {
+// 	if ($item->ID  && 'menu_cat' === $args->theme_location) {
+// 		$classes[] = 'footer-top-wrap-list-item-sublist-item';
+// 	}
 
-	if ($item->ID  && 'menu_company' === $args->theme_location) {
-		$classes[] = 'footer-top-wrap-list-item-sublist-item';
-	}
+// 	if ($item->ID  && 'menu_company' === $args->theme_location) {
+// 		$classes[] = 'footer-top-wrap-list-item-sublist-item';
+// 	}
 
-	if ($item->ID  && 'menu_main' === $args->theme_location) {
-		$classes[] = 'header-bottom-wrap-menu-item';
-	}
+// 	if ($item->ID  && 'menu_main' === $args->theme_location) {
+// 		$classes[] = 'header-bottom-wrap-menu-item';
+// 	}
 
-	return $classes;
-}
+// 	return $classes;
+// }
 
 
 // Добавляет атрибут class к ссылке в пунктах меню menu_main
@@ -169,7 +169,7 @@ function my_assets()
 	// wp_enqueue_script('fancybox', get_template_directory_uri() . '/js/imageGallery/jquery.fancybox.min.js', array(), $scrypt_version, true); //fancybox
 	// wp_enqueue_script('html2pdf', get_template_directory_uri() . '/js/html2pdf.bundle.js', array(), $scrypt_version, true); //Create PDF-page 
 	// wp_enqueue_script('scroll', get_template_directory_uri() . '/js/scroll.js', array(), $scrypt_version, true); //Scroll
-	// wp_enqueue_script('sender', get_template_directory_uri() . '/js/sender.js', array(), $scrypt_version, true); //Отправщик JS
+	wp_enqueue_script('sender', get_template_directory_uri() . '/js/sender.js', array(), $scrypt_version, true); //Отправщик JS
 		// wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), $scrypt_version, true); //jquery код
 	wp_enqueue_script('vendors', get_template_directory_uri() . '/js/vendors.min.js', array(), $scrypt_version, true); //Библиотеки
 
@@ -380,32 +380,32 @@ function aj_fnc()
 
 
 // Отправка формы из модального окна
-add_action('wp_ajax_sendphone', 'sendphone');
-add_action('wp_ajax_nopriv_sendphone', 'sendphone');
+// add_action('wp_ajax_sendphone', 'sendphone');
+// add_action('wp_ajax_nopriv_sendphone', 'sendphone');
 
-function sendphone()
-{
-	if (empty($_REQUEST['nonce'])) {
-		wp_die('0');
-	}
+// function sendphone()
+// {
+// 	if (empty($_REQUEST['nonce'])) {
+// 		wp_die('0');
+// 	}
 
-	if (check_ajax_referer('NEHERTUTLAZIT', 'nonce', false)) {
+// 	if (check_ajax_referer('NEHERTUTLAZIT', 'nonce', false)) {
 
-		$headers = array(
-			'From: Сайт ' . COMPANY_NAME . ' <' . MAIL_RESEND . '>',
-			'content-type: text/html',
-		);
+// 		$headers = array(
+// 			'From: Сайт ' . COMPANY_NAME . ' <' . MAIL_RESEND . '>',
+// 			'content-type: text/html',
+// 		);
 
-		add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-		if (wp_mail(carbon_get_theme_option('as_email_send'), 'Заказ звонка', '<strong>Имя:</strong> ' . $_REQUEST["name"] . ' <br/> <strong>Телефон:</strong> ' . $_REQUEST["tel"], $headers))
-			wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
-		else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>");
-	} else {
-		wp_die('НО-НО-НО!', '', 403);
-	}
-}
+// 		add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
+// 		if (wp_mail(carbon_get_theme_option('as_email_send'), 'Заказ звонка', '<strong>Имя:</strong> ' . $_REQUEST["name"] . ' <br/> <strong>Телефон:</strong> ' . $_REQUEST["tel"], $headers))
+// 			wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
+// 		else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>");
+// 	} else {
+// 		wp_die('НО-НО-НО!', '', 403);
+// 	}
+// }
 
 
 // Подключение файлов
-require_once( dirname(__FILE__) . '/sender.php');
+require_once( dirname(__FILE__) . '/sender.php'); 
 

@@ -127,217 +127,6 @@ let slider = new Swiper('.slider-bg', {
 	//},
 });
 
-// // Карта Yandex ========================================================================================================
-// ymaps.ready(init);
-
-// function init() {
-
-// 	var myMap = new ymaps.Map("map", {
-// 		center: [52.971016, 36.081687],
-// 		zoom: 17,
-// 		// Выключаем все управление картой
-// 		controls: []
-
-// 	});
-
-// 	var myGeoObjects = [];
-
-// 	myGeoObjects[0] = new ymaps.Placemark([52.971016, 36.081687], {
-// 		// Свойства. 
-// 		// hintContent: '<div class="map-hint">Авто профи, Курск, ул.Комарова, 16</div>',
-// 		balloonContent: '<div class="map-hint">ООО "АРС", г.Орёл, ул. Революции, д.1</div>',
-// 	}, {
-// 		// Необходимо указать данный тип макета.
-// 		iconLayout: 'default#image',
-// 		iconImageHref: 'img/icons/map-marker.svg',
-// 		// Размеры метки.
-// 		iconImageSize: [36, 55],
-// 		// Смещение левого верхнего угла иконки относительно
-// 		// её «ножки» (точки привязки).
-// 		iconImageOffset: [-18, -26]
-// 	});
-
-// 	// myGeoObjects[1] = new ymaps.Placemark([51.720771, 36.195773], {
-// 	// 	// Свойства. 
-// 	// 	// hintContent: '<div class="map-hint">Авто профи , Курск, ул.Гунатовская, 32</div>',
-// 	// 	balloonContent: '<div class="map-hint">Авто профи, Курск, ул.Гунатовская, 32</div>',
-// 	// }, {
-// 	// 	// Необходимо указать данный тип макета.
-// 	// 	iconLayout: 'default#image',
-// 	// 	iconImageHref: 'img/icons/map-marker.svg',
-// 	// 	// Размеры метки.
-// 	// 	iconImageSize: [151, 41],
-// 	// 	// Смещение левого верхнего угла иконки относительно
-// 	// 	// её «ножки» (точки привязки).
-// 	// 	iconImageOffset: [-18, -26]
-// 	// });
-
-// 	// var clusterIcons=[{
-// 	//         href:'img/map-marker.svg',
-// 	//         size:[31,40],
-// 	//         offset:[0,0]
-// 	// }];
-
-// 	var clusterer = new ymaps.Clusterer({
-// 		clusterDisableClickZoom: false,
-// 		clusterOpenBalloonOnClick: false,
-// 		// Устанавливаем стандартный макет балуна кластера "Карусель".
-// 		clusterBalloonContentLayout: 'cluster#balloonCarousel',
-// 		// Устанавливаем собственный макет.
-// 		// clusterBalloonItemContentLayout: customItemContentLayout,
-// 		// Устанавливаем режим открытия балуна. 
-// 		// В данном примере балун никогда не будет открываться в режиме панели.
-// 		clusterBalloonPanelMaxMapArea: 0,
-// 		// Устанавливаем размеры макета контента балуна (в пикселях).
-// 		clusterBalloonContentLayoutWidth: 300,
-// 		clusterBalloonContentLayoutHeight: 200,
-// 		// Устанавливаем максимальное количество элементов в нижней панели на одной странице
-// 		clusterBalloonPagerSize: 5
-// 		// Настройка внешего вида нижней панели.
-// 		// Режим marker рекомендуется использовать с небольшим количеством элементов.
-// 		// clusterBalloonPagerType: 'marker',
-// 		// Можно отключить зацикливание списка при навигации при помощи боковых стрелок.
-// 		// clusterBalloonCycling: false,
-// 		// Можно отключить отображение меню навигации.
-// 		// clusterBalloonPagerVisible: false
-// 	});
-
-// 	clusterer.add(myGeoObjects);
-// 	myMap.geoObjects.add(clusterer);
-// 	myMap.behaviors.disable('scrollZoom');
-// }
-// ===============================================================================================================
-
-
-// Карта Yandex старая ================================================================================================
-// function map(n) {
-// 	ymaps.ready(init);
-// 	function init() {
-// 		// Создание карты.
-// 		var myMap = new ymaps.Map("map", {
-// 			// Координаты центра карты.
-// 			// Порядок по умолчанию: «широта, долгота».
-// 			// Чтобы не определять координаты центра карты вручную,
-// 			// воспользуйтесь инструментом Определение координат.
-// 			controls: [],
-// 			center: [43.585525, 39.723062],
-// 			// Уровень масштабирования. Допустимые значения:
-// 			// от 0 (весь мир) до 19.
-// 			zoom: 10
-// 		});
-
-// 		let myPlacemark = new ymaps.Placemark([43.585525, 39.723062], {
-// 		}, {
-// 			// Опции.
-// 			//balloonContentHeader: 'Mistoun',
-// 			//balloonContentBody: 'Москва, Николоямская 40с1',
-// 			//balloonContentFooter: '+ 7(495) 507-54 - 90',
-// 			//hasBalloon: true,
-// 			//hideIconOnBalloonOpen: true,
-
-// 			hasBalloon: false,
-// 			hideIconOnBalloonOpen: false,
-// 			// Необходимо указать данный тип макета.
-// 			iconLayout: 'default#imageWithContent',
-// 			// Своё изображение иконки метки.
-// 			iconImageHref: 'img/icons/map.svg',
-// 			// Размеры метки.
-// 			iconImageSize: [40, 40],
-// 			// Смещение левого верхнего угла иконки относительно
-// 			// её "ножки" (точки привязки).
-// 			iconImageOffset: [-20, -20],
-// 			// Смещение слоя с содержимым относительно слоя с картинкой.
-// 			iconContentOffset: [0, 0],
-// 		});
-// 		myMap.geoObjects.add(myPlacemark);
-
-// 		myMap.behaviors.disable('scrollZoom');
-// 		myMap.behaviors.disable('drag');
-// 	}
-// }
-// ============================================================================================================
-
-// Карта Google ================================================================================================
-// function mapAdd() {
-// 	let tag = document.createElement('script');
-// 	tag.src = "https://maps.google.com/maps/api/js?sensor=false&amp;key=&callback=mapInit";
-// 	let firstScriptTag = document.getElementsByTagName('script')[0];
-// 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-// }
-// function mapInit(n = 1) {
-// 	google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
-// 		var map = this;
-// 		var ov = new google.maps.OverlayView();
-// 		ov.onAdd = function () {
-// 			var proj = this.getProjection();
-// 			var aPoint = proj.fromLatLngToContainerPixel(latlng);
-// 			aPoint.x = aPoint.x + offsetX;
-// 			aPoint.y = aPoint.y + offsetY;
-// 			map.panTo(proj.fromContainerPixelToLatLng(aPoint));
-// 			//map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
-// 		}
-// 		ov.draw = function () { };
-// 		ov.setMap(this);
-// 	};
-// 	var markers = new Array();
-// 	var infowindow = new google.maps.InfoWindow({
-// 		//pixelOffset: new google.maps.Size(-230,250)
-// 	});
-// 	var locations = [
-// 		[new google.maps.LatLng(53.819055, 27.8813694)],
-// 		[new google.maps.LatLng(53.700055, 27.5513694)],
-// 		[new google.maps.LatLng(53.809055, 27.5813694)],
-// 		[new google.maps.LatLng(53.859055, 27.5013694)],
-// 	]
-// 	var options = {
-// 		zoom: 10,
-// 		panControl: false,
-// 		mapTypeControl: false,
-// 		center: locations[0][0],
-// 		styles: [{ "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "color": "#e0efef" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "hue": "#1900ff" }, { "color": "#c0e8e8" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "lightness": 100 }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "lightness": 700 }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#7dcdcd" }] }],
-// 		scrollwheel: false,
-// 		mapTypeId: google.maps.MapTypeId.ROADMAP
-// 	};
-// 	var map = new google.maps.Map(document.getElementById('map'), options);
-// 	var icon = {
-// 		url: 'img/icons/map.svg',
-// 		scaledSize: new google.maps.Size(18, 20),
-// 		anchor: new google.maps.Point(9, 10)
-// 	}
-// 	for (var i = 0; i < locations.length; i++) {
-// 		var marker = new google.maps.Marker({
-// 			icon: icon,
-// 			position: locations[i][0],
-// 			map: map,
-// 		});
-// 		google.maps.event.addListener(marker, 'click', (function (marker, i) {
-// 			return function () {
-// 				for (var m = 0; m < markers.length; m++) {
-// 					markers[m].setIcon(icon);
-// 				}
-// 				var cnt = i + 1;
-// 				//infowindow.setContent(document.querySelector('.events-map__item_' + cnt).innerHTML);
-// 				//infowindow.open(map, marker);
-// 				marker.setIcon(icon);
-// 				map.setCenterWithOffset(marker.getPosition(), 0, 0);
-// 				setTimeout(function () {
-
-// 				}, 10);
-// 			}
-// 		})(marker, i));
-// 		markers.push(marker);
-// 	}
-// 	if (n) {
-// 		var nc = n - 1;
-// 		setTimeout(function () {
-// 			google.maps.event.trigger(markers[nc], 'click');
-// 		}, 500);
-// 	}
-// }
-// if (document.querySelector('#map')) {
-// 	mapAdd();
-// }
-// ================================================================================================================================
 
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
@@ -404,27 +193,6 @@ if (location.hash) {
 		_goto(document.querySelector('.' + hsh), 500, '');
 	}
 }
-//=================
-
-//Menu старое
-// let iconMenu = document.querySelector(".icon-menu");
-// if (iconMenu != null) {
-// 	let delay = 500;
-// 	let menuBody = document.querySelector(".menu__body");
-// 	iconMenu.addEventListener("click", function (e) {
-// 		if (unlock) {
-// 			body_lock(delay);
-// 			iconMenu.classList.toggle("_active");
-// 			menuBody.classList.toggle("_active");
-// 		}
-// 	});
-// };
-// function menu_close() {
-// 	let iconMenu = document.querySelector(".icon-menu");
-// 	let menuBody = document.querySelector(".menu__body");
-// 	iconMenu.classList.remove("_active");
-// 	menuBody.classList.remove("_active");
-// } 
 //=================
 
 //BodyLock
@@ -1155,8 +923,8 @@ const iconMenu = document.querySelector(".icon-menu");
 const body = document.querySelector("body");
 const menuBody = document.querySelector(".mob-menu");
 const menuListItemElems = document.querySelector(".mob-menu__list");
-const mobsearch = document.querySelector(".header__mob-search-btn");
-const headsearch = document.querySelector(".header__search-mob");
+// const mobsearch = document.querySelector(".header__mob-search-btn");
+// const headsearch = document.querySelector(".header__search-mob");
 
 //BURGER
 if (iconMenu) {
@@ -1176,12 +944,12 @@ if (menuListItemElems) {
 	});
 }
 
-// Строка поиска на мобилках 
-if (mobsearch) {
-	mobsearch.addEventListener("click", function () {
-		headsearch.classList.toggle("_active");
-	});
-}
+// // Строка поиска на мобилках 
+// if (mobsearch) {
+// 	mobsearch.addEventListener("click", function () {
+// 		headsearch.classList.toggle("_active");
+// 	});
+// }
 
 // Закрытие моб меню при клике вне области меню 
 window.addEventListener('click', e => { // при клике в любом месте окна браузера
@@ -1195,21 +963,21 @@ window.addEventListener('click', e => { // при клике в любом ме�
 })
 
 // Плавная прокрутка
-const smotScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
+// const smotScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
 
-smotScrollElems.forEach(link => {
-	link.addEventListener('click', (event) => {
-		event.preventDefault()
-		console.log(event);
+// smotScrollElems.forEach(link => {
+// 	link.addEventListener('click', (event) => {
+// 		event.preventDefault()
+// 		console.log(event);
 
-		const id = link.getAttribute('href').substring(1)
-		console.log('id : ', id);
+// 		const id = link.getAttribute('href').substring(1)
+// 		console.log('id : ', id);
 
-		document.getElementById(id).scrollIntoView({
-			behavior: 'smooth'
-		});
-	})
-});
+// 		document.getElementById(id).scrollIntoView({
+// 			behavior: 'smooth'
+// 		});
+// 	})
+// });
 
 
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
