@@ -25,6 +25,7 @@
 							<div class="form__line">
 								<input id="name" autocomplete="off" type="text" name="name" data-error="Ошибка" data-value="Имя" class="popup__form-input input _req">
 								<input id="tel2" autocomplete="off" type="text" name="tel" data-error="Ошибка" data-value="Телефон" class="popup__form-input input _phone _req">
+								<input id="email" autocomplete="off" type="text" name="email" data-error="Ошибка" data-value="Email" class="popup__form-input input _req">
 							</div>
 							<p class="popup__policy">Заполняя данную форму вы соглашаетесь с <a href="#">политикой
 									конфиденциальности</a></p>

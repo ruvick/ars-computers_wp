@@ -15,25 +15,13 @@
 	</div>
 </section> 
 
-<section id="catalog" class="catalog">
+<section id="catalog" class="catalog"> 
 	<div class="_container">
 
 		<div class="catalog__wrap">
 			<div class="catalog__sidebar">
 				<ul class="catalog__sidebar-menu-list">
-				<?php wp_list_categories( array('child_of' => 3, 'orderby' => 'ID', 'order' => 'asc', 'hide_empty'=> 0, 'title_li' => '') ); ?>
-					<!-- <li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link _active">Компьютеры</a></li>
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">Принтеры</a></li>
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">МФУ</a></li>
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">Ноутбуки</a></li>
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">Мониторы</a></li>
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">Комплектующие</a></li> -->
+					<?php wp_list_categories( array('child_of' => 3, 'orderby' => 'ID', 'order' => 'asc', 'hide_empty'=> 0, 'title_li' => '') ); ?>
 				</ul>
 				<p class="catalog__sidebar-text">Скачайте прайс-лист</p>
 

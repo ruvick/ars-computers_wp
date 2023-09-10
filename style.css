@@ -6020,6 +6020,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		flex-wrap: wrap;
 	}
 
+	.catalog__sidebar-menu-list .cat-item,
 	.catalog__sidebar-menu-list-item {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -6034,6 +6035,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		margin-right: 3px;
 	}
 
+	.catalog__sidebar-menu-list .cat-item:last-child,
 	.catalog__sidebar-menu-list-item:last-child {
 		margin-bottom: 3.5px;
 	}
@@ -6233,6 +6235,23 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		font-size: 14px;
 		margin-top: 5px;
 	}
+
+	.catalog__sidebar-price-link {
+		flex: 0 1 32.9%;
+		margin-right: 3px;
+	}
+
+	.catalog__sidebar-price-link:last-child {
+		margin-right: 0px;
+	}
+
+	.title-navigation__title {
+		margin-bottom: 5px !important;
+	}
+
+	.title-navigation {
+		padding-bottom: 5px !important;
+	}
 }
 
 @media (max-width: 730px) {
@@ -6242,10 +6261,16 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		flex: 0 1 29%;
 	}
 
+	.catalog__sidebar-menu-list .cat-item,
 	.catalog__sidebar-menu-list-item {
 		-webkit-box-flex: 0;
 		-ms-flex: 0 1 49.5%;
 		flex: 0 1 49.5%;
+	}
+
+	.catalog__sidebar-price-link {
+		flex: 0 1 49.5%;
+		margin-right: 3px;
 	}
 }
 
@@ -6273,6 +6298,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 }
 
 @media (max-width: 630px) {
+
+	.catalog__sidebar-menu-list .cat-item,
 	.catalog__sidebar-menu-list-item {
 		-webkit-box-flex: 0;
 		-ms-flex: 0 1 49.3%;
@@ -6340,6 +6367,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 	.footer .contacts__time-phone {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+		position: fixed !important;
 	}
 }
 
@@ -6431,6 +6464,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		flex: 0 0 65%;
 	}
 
+	.catalog__sidebar-menu-list .cat-item,
 	.catalog__sidebar-menu-list-item {
 		margin-right: 0;
 		-webkit-box-flex: 0;
@@ -6469,6 +6503,20 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 		-webkit-box-flex: 0;
 		-ms-flex: 0 0 65%;
 		flex: 0 0 65%;
+	}
+
+	.catalog__sidebar-ptice-block {
+		flex-wrap: wrap;
+	}
+
+	.catalog__sidebar-price-link {
+		flex: 0 1 100%;
+		margin-right: 0;
+		margin-bottom: 3.5px;
+	}
+
+	.catalog__sidebar-price-link:last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -6534,8 +6582,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 	.catalog__sidebar-price-link {
 		width: 100%;
-		margin-right: 0;
-		margin-bottom: 10px;
 	}
 
 	.catalog__sidebar-price-link:last-child {
