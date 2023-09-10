@@ -19,10 +19,10 @@
 	<div class="_container">
 
 		<div class="catalog__wrap">
-
 			<div class="catalog__sidebar">
 				<ul class="catalog__sidebar-menu-list">
-					<li class="catalog__sidebar-menu-list-item"><a href="#"
+				<?php wp_list_categories( array('child_of' => 3, 'orderby' => 'ID', 'order' => 'asc', 'hide_empty'=> 0, 'title_li' => '') ); ?>
+					<!-- <li class="catalog__sidebar-menu-list-item"><a href="#"
 							class="catalog__sidebar-menu-list-item-link _active">Компьютеры</a></li>
 					<li class="catalog__sidebar-menu-list-item"><a href="#"
 							class="catalog__sidebar-menu-list-item-link">Принтеры</a></li>
@@ -33,7 +33,7 @@
 					<li class="catalog__sidebar-menu-list-item"><a href="#"
 							class="catalog__sidebar-menu-list-item-link">Мониторы</a></li>
 					<li class="catalog__sidebar-menu-list-item"><a href="#"
-							class="catalog__sidebar-menu-list-item-link">Комплектующие</a></li>
+							class="catalog__sidebar-menu-list-item-link">Комплектующие</a></li> -->
 				</ul>
 				<p class="catalog__sidebar-text">Скачайте прайс-лист</p>
 
@@ -48,8 +48,8 @@
 
 <div class="catalog-product__row">
 
-<div class="product__column catalog-product__column">
 <?php if (have_posts()) { while (have_posts()) { the_post(); ?>
+<div class="product__column catalog-product__column">
 <div class="product__card">
 	<a href="<?php echo get_permalink();?>" class="product__card-img _ibg"> 
 		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
@@ -61,9 +61,9 @@
 	</div>
 	<a href="<?php echo get_permalink();?>" class="product__card-btn btn">Подробнее</a>
 </div>
+</div>
 <?php } //конец while
 } //конец if ?>
-</div>
 
 <!-- <div class="product__column catalog-product__column">
 <div class="product__card">
