@@ -1,29 +1,3 @@
-// Файлы Java Script -----------------------------------------------------------------------------------------------------
-
-// возвращает куки с указанным name,
-// или undefined, если ничего не найдено
-function getCookie(name) {
-	let matches = document.cookie.match(new RegExp(
-		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-	));
-	return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-
-function light_box_set() {
-	let elements = document.querySelectorAll('.wp-block-gallery a');
-	for (let elem of elements) {
-		elem.dataset.fslightbox = "gallery";
-	}
-	refreshFsLightbox();
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-	light_box_set();
-});
-
-
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
@@ -154,84 +128,84 @@ let slider = new Swiper('.slider-bg', {
 });
 
 // // Карта Yandex ========================================================================================================
-ymaps.ready(init);
+// ymaps.ready(init);
 
-function init() {
+// function init() {
 
-	var myMap = new ymaps.Map("map", {
-		center: [52.971016, 36.081687],
-		zoom: 17,
-		// Выключаем все управление картой
-		controls: []
+// 	var myMap = new ymaps.Map("map", {
+// 		center: [52.971016, 36.081687],
+// 		zoom: 17,
+// 		// Выключаем все управление картой
+// 		controls: []
 
-	});
+// 	});
 
-	var myGeoObjects = [];
+// 	var myGeoObjects = [];
 
-	myGeoObjects[0] = new ymaps.Placemark([52.971016, 36.081687], {
-		// Свойства. 
-		// hintContent: '<div class="map-hint">Авто профи, Курск, ул.Комарова, 16</div>',
-		balloonContent: '<div class="map-hint">ООО "АРС", г.Орёл, ул. Революции, д.1</div>',
-	}, {
-		// Необходимо указать данный тип макета.
-		iconLayout: 'default#image',
-		iconImageHref: 'img/icons/map-marker.svg',
-		// Размеры метки.
-		iconImageSize: [36, 55],
-		// Смещение левого верхнего угла иконки относительно
-		// её «ножки» (точки привязки).
-		iconImageOffset: [-18, -26]
-	});
+// 	myGeoObjects[0] = new ymaps.Placemark([52.971016, 36.081687], {
+// 		// Свойства. 
+// 		// hintContent: '<div class="map-hint">Авто профи, Курск, ул.Комарова, 16</div>',
+// 		balloonContent: '<div class="map-hint">ООО "АРС", г.Орёл, ул. Революции, д.1</div>',
+// 	}, {
+// 		// Необходимо указать данный тип макета.
+// 		iconLayout: 'default#image',
+// 		iconImageHref: 'img/icons/map-marker.svg',
+// 		// Размеры метки.
+// 		iconImageSize: [36, 55],
+// 		// Смещение левого верхнего угла иконки относительно
+// 		// её «ножки» (точки привязки).
+// 		iconImageOffset: [-18, -26]
+// 	});
 
-	// myGeoObjects[1] = new ymaps.Placemark([51.720771, 36.195773], {
-	// 	// Свойства. 
-	// 	// hintContent: '<div class="map-hint">Авто профи , Курск, ул.Гунатовская, 32</div>',
-	// 	balloonContent: '<div class="map-hint">Авто профи, Курск, ул.Гунатовская, 32</div>',
-	// }, {
-	// 	// Необходимо указать данный тип макета.
-	// 	iconLayout: 'default#image',
-	// 	iconImageHref: 'img/icons/map-marker.svg',
-	// 	// Размеры метки.
-	// 	iconImageSize: [151, 41],
-	// 	// Смещение левого верхнего угла иконки относительно
-	// 	// её «ножки» (точки привязки).
-	// 	iconImageOffset: [-18, -26]
-	// });
+// 	// myGeoObjects[1] = new ymaps.Placemark([51.720771, 36.195773], {
+// 	// 	// Свойства. 
+// 	// 	// hintContent: '<div class="map-hint">Авто профи , Курск, ул.Гунатовская, 32</div>',
+// 	// 	balloonContent: '<div class="map-hint">Авто профи, Курск, ул.Гунатовская, 32</div>',
+// 	// }, {
+// 	// 	// Необходимо указать данный тип макета.
+// 	// 	iconLayout: 'default#image',
+// 	// 	iconImageHref: 'img/icons/map-marker.svg',
+// 	// 	// Размеры метки.
+// 	// 	iconImageSize: [151, 41],
+// 	// 	// Смещение левого верхнего угла иконки относительно
+// 	// 	// её «ножки» (точки привязки).
+// 	// 	iconImageOffset: [-18, -26]
+// 	// });
 
-	// var clusterIcons=[{
-	//         href:'img/map-marker.svg',
-	//         size:[31,40],
-	//         offset:[0,0]
-	// }];
+// 	// var clusterIcons=[{
+// 	//         href:'img/map-marker.svg',
+// 	//         size:[31,40],
+// 	//         offset:[0,0]
+// 	// }];
 
-	var clusterer = new ymaps.Clusterer({
-		clusterDisableClickZoom: false,
-		clusterOpenBalloonOnClick: false,
-		// Устанавливаем стандартный макет балуна кластера "Карусель".
-		clusterBalloonContentLayout: 'cluster#balloonCarousel',
-		// Устанавливаем собственный макет.
-		// clusterBalloonItemContentLayout: customItemContentLayout,
-		// Устанавливаем режим открытия балуна. 
-		// В данном примере балун никогда не будет открываться в режиме панели.
-		clusterBalloonPanelMaxMapArea: 0,
-		// Устанавливаем размеры макета контента балуна (в пикселях).
-		clusterBalloonContentLayoutWidth: 300,
-		clusterBalloonContentLayoutHeight: 200,
-		// Устанавливаем максимальное количество элементов в нижней панели на одной странице
-		clusterBalloonPagerSize: 5
-		// Настройка внешего вида нижней панели.
-		// Режим marker рекомендуется использовать с небольшим количеством элементов.
-		// clusterBalloonPagerType: 'marker',
-		// Можно отключить зацикливание списка при навигации при помощи боковых стрелок.
-		// clusterBalloonCycling: false,
-		// Можно отключить отображение меню навигации.
-		// clusterBalloonPagerVisible: false
-	});
+// 	var clusterer = new ymaps.Clusterer({
+// 		clusterDisableClickZoom: false,
+// 		clusterOpenBalloonOnClick: false,
+// 		// Устанавливаем стандартный макет балуна кластера "Карусель".
+// 		clusterBalloonContentLayout: 'cluster#balloonCarousel',
+// 		// Устанавливаем собственный макет.
+// 		// clusterBalloonItemContentLayout: customItemContentLayout,
+// 		// Устанавливаем режим открытия балуна. 
+// 		// В данном примере балун никогда не будет открываться в режиме панели.
+// 		clusterBalloonPanelMaxMapArea: 0,
+// 		// Устанавливаем размеры макета контента балуна (в пикселях).
+// 		clusterBalloonContentLayoutWidth: 300,
+// 		clusterBalloonContentLayoutHeight: 200,
+// 		// Устанавливаем максимальное количество элементов в нижней панели на одной странице
+// 		clusterBalloonPagerSize: 5
+// 		// Настройка внешего вида нижней панели.
+// 		// Режим marker рекомендуется использовать с небольшим количеством элементов.
+// 		// clusterBalloonPagerType: 'marker',
+// 		// Можно отключить зацикливание списка при навигации при помощи боковых стрелок.
+// 		// clusterBalloonCycling: false,
+// 		// Можно отключить отображение меню навигации.
+// 		// clusterBalloonPagerVisible: false
+// 	});
 
-	clusterer.add(myGeoObjects);
-	myMap.geoObjects.add(clusterer);
-	myMap.behaviors.disable('scrollZoom');
-}
+// 	clusterer.add(myGeoObjects);
+// 	myMap.geoObjects.add(clusterer);
+// 	myMap.behaviors.disable('scrollZoom');
+// }
 // ===============================================================================================================
 
 
@@ -1236,63 +1210,6 @@ smotScrollElems.forEach(link => {
 		});
 	})
 });
-
-
-// Полоса прокрутки в шапке
-const scrollProgress = document.getElementById('scroll-progress');
-const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-window.addEventListener('scroll', () => {
-	const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-	scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
-});
-
-
-// Ползунок выбора цены
-const priceEl = document.querySelector(".price");
-
-function changePrice(price) {
-	priceEl.innerText = price;
-	console.log(price);
-};
-
-
-// Подсказки
-tippy('._tippy', {
-	content: "Подсказка",
-});
-
-
-// Поочередное открытие нескольких блоков меню, табы, либо что то еще
-const BarIconElems = document.querySelectorAll('.sidebar__menu-open');
-const BarLinkIconElems = document.querySelectorAll('.sidebar__menu-icon');
-const BarSubMenuElems = document.querySelectorAll('.sidebar__submenu');
-
-BarIconElems.forEach((btn, index) => {
-	btn.addEventListener('click', () => {
-
-		if (!btn.classList.contains('sidebar__menu-icon_active')) {
-
-			BarSubMenuElems.forEach((BarSubMenuElem) => {
-				BarSubMenuElem.classList.remove('active')
-			});
-			BarIconElems.forEach((BarIconElem) => {
-				BarIconElem.classList.remove('sidebar__menu-icon_active')
-			});
-			BarLinkIconElems.forEach((BarLinkIconElem) => {
-				BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
-			});
-
-			BarSubMenuElems[index].classList.add('active')
-			BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
-			btn.classList.add('sidebar__menu-icon_active')
-		} else {
-			BarSubMenuElems[index].classList.remove('active')
-			BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
-			btn.classList.remove('sidebar__menu-icon_active')
-		}
-	})
-})
 
 
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');

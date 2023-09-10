@@ -158,7 +158,7 @@ function my_assets()
 
 	wp_enqueue_script('jquery'); 
 
-	wp_enqueue_script('forms', get_template_directory_uri() . '/js/forms.js', array(), $scrypt_version, true); //Формы отправки и валидация
+	// wp_enqueue_script('forms', get_template_directory_uri() . '/js/forms.js', array(), $scrypt_version, true); //Формы отправки и валидация
 	// wp_enqueue_script('slick', get_template_directory_uri() . '/js/sliders/slick.min.js', array(), $scrypt_version, true); //Слайдер Slick
 	// wp_enqueue_script('swiper', get_template_directory_uri() . '/js/sliders/swiper.js', array(), $scrypt_version, true); //Слайдер Swiper
 	wp_enqueue_script('functions', get_template_directory_uri() . '/js/functions.js', array(), $scrypt_version, true); //Спойлеры, табы и прочий функционал
@@ -169,7 +169,7 @@ function my_assets()
 	// wp_enqueue_script('fancybox', get_template_directory_uri() . '/js/imageGallery/jquery.fancybox.min.js', array(), $scrypt_version, true); //fancybox
 	// wp_enqueue_script('html2pdf', get_template_directory_uri() . '/js/html2pdf.bundle.js', array(), $scrypt_version, true); //Create PDF-page 
 	// wp_enqueue_script('scroll', get_template_directory_uri() . '/js/scroll.js', array(), $scrypt_version, true); //Scroll
-	wp_enqueue_script('sender', get_template_directory_uri() . '/js/sender.js', array(), $scrypt_version, true); //Отправщик JS
+	// wp_enqueue_script('sender', get_template_directory_uri() . '/js/sender.js', array(), $scrypt_version, true); //Отправщик JS
 		// wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), $scrypt_version, true); //jquery код
 	wp_enqueue_script('vendors', get_template_directory_uri() . '/js/vendors.min.js', array(), $scrypt_version, true); //Библиотеки
 
@@ -409,4 +409,3 @@ function sendphone()
 // Подключение файлов
 require_once( dirname(__FILE__) . '/sender.php');
 
-?> 
