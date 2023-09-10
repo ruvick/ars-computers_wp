@@ -5216,18 +5216,38 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	height: 600px;
 }
 
-.content ul,
-.content h2,
-.content h3 {
+.content h1 {
 	margin-bottom: 15px;
 }
 
+.content h2,
+.content h3,
+.content p {
+	margin: 25px 0 15px 0;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 32px;
+}
+
+.content p:last-child {
+	margin-bottom: 0;
+}
+
+.content ul,
 .content ul li {
 	margin-bottom: 15px;
 }
 
 .content ul li:last-child {
 	margin-bottom: 0;
+}
+
+.content .wp-block-image.size-large {
+	max-width: 730px;
+	width: 100%;
+	margin-bottom: 15px;
 }
 
 /* =========================== */
