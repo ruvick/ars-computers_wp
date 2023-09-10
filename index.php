@@ -55,6 +55,7 @@
 <section class="products-sec section">
 	<div class="_container">
 		<h2 class="products-sec__title title">Продукция</h2>
+		
 		<div class="products-sec__row">
 
 			<div class="products-sec__column">
@@ -178,7 +179,7 @@
 			</div>
 
 		</div>
-		<?php wp_list_categories( array('child_of' => 6, 'hide_empty'=> 0, 'title_li' => '') ); ?>
+		
 	</div>
 </section>
 
@@ -226,48 +227,34 @@
 		<h2 class="completed-projects__title title">Услуги</h2>
 		<div class="completed-projects__row">
 
+		<?php
+$page_children = new WP_Query(
+	array(
+		'post_type' => 'page',
+		'post_parent' => '21',
+		'order'       => 'ASC',
+	)
+);
+if ($page_children->have_posts()) :
+	while ($page_children->have_posts()) : $page_children->the_post();
+		?>
+
 			<div class="completed-projects__column">
-				<a href="service.html" class="completed-projects__card">
+				<a href="<?php the_permalink(); ?>" class="completed-projects__card">
 					<div class="completed-projects__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/01.jpg" alt=""></picture>
 					</div>
 					<div class="completed-projects__card-descp completed-projects__card-descp_red">
-						<h5 class="completed-projects__card-descp-title">
-							Гарантийный ремонт
-						</h5>
-						<!-- <a href="#" class="completed-projects__card-descp-link">Подробнее...</a> -->
+						<h5 class="completed-projects__card-descp-title"><?php the_title(); ?></h5>
+						<!-- <a href="#" class="completed-projects__card-descp-link">Подробнее...</a> --> 
 					</div>
 				</a>
 			</div>
-
-			<div class="completed-projects__column">
-				<a href="service.html" class="completed-projects__card">
-					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/02.jpg" alt=""></picture>
-					</div>
-					<div class="completed-projects__card-descp">
-						<h5 class="completed-projects__card-descp-title">
-							Послегарантийный ремонт
-						</h5>
-						<!-- <a href="#" class="completed-projects__card-descp-link">Подробнее...</a> -->
-					</div>
-				</a>
-			</div>
-
-			<div class="completed-projects__column">
-				<a href="service.html" class="completed-projects__card">
-					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/03.jpg?" alt=""></picture>
-					</div>
-					<div class="completed-projects__card-descp">
-						<h5 class="completed-projects__card-descp-title">
-							Заправка картриджей
-						</h5>
-						<!-- <a href="#" class="completed-projects__card-descp-link">Подробнее...</a> -->
-					</div>
-				</a>
-			</div>
-
+		<?php
+	endwhile;
+endif;
+wp_reset_query();
+?>
 		</div>
 
 		<div class="completed-projects__help help-wrap">
