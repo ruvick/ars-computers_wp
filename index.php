@@ -41,26 +41,19 @@
 	</div>
 </section>
 
-<section class="about section">
-	<div class="_container">
-
-		<h2 class="about__title title">
-			О компании
-		</h2>
-
-		<div class="about__subtitle">
-			<p> Компания «АРС» основана и эффективно работает на рынке г. Орла и Орловской области с 1992 года.
-				Форма собственности частная, что позволяет работать гибко и быстро
-				с минимальными накладными расходами.
-				Сохранён основной костяк сотрудников с момента основания компании.
-				Огромная база поставщиков - дистрибьюторов. Оперативность поставки, от двух дней.
-				Возможность(спец.контракты) получения спеццен от производителей
-				оборудования.
-			</p>
-		</div>
-
-	</div>
-</section>
+<? $abouttc = carbon_get_theme_option("about_home");
+	if (!empty($abouttc)) { ?>
+		<section class="about section">
+			<div class="_container">
+				<h2 class="about__title title">
+					<?php echo carbon_get_theme_option('about_home_title'); ?>
+				</h2>
+				<div class="about__subtitle">
+					<p><? echo $abouttc; ?></p>
+				</div>
+			</div>
+		</section>
+<? } ?>
 
 <section class="products-sec section">
 	<div class="_container">
