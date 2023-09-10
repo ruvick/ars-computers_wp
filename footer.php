@@ -7,13 +7,8 @@
 				<p class="logo-icon__text">АРС КОМПЬЮТЕРЫ <span>Работаем с 1992 года</span></p>
 			</a>
 
-			<ul class="menu-list footer__menu-list d-flex">
-				<li class="menu-list__item"><a href="about.html" class="menu-list__link">О нас</a></li>
-				<li class="menu-list__item"><a href="catalog.html" class="menu-list__link">Каталог</a></li>
-				<li class="menu-list__item"><a href="payment.html" class="menu-list__link">Оплата и доставка</a></li>
-				<li class="menu-list__item"><a href="service.html" class="menu-list__link">Сервис</a></li>
-				<li class="menu-list__item"><a href="contacts.html" class="menu-list__link">Контакты</a></li>
-			</ul>
+			<?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu-list footer__menu-list d-flex',
+						'container_class' => 'menu-list footer__menu-list d-flex','container' => false )); ?> 
 
 			<div class="contacts d-flex">
 				<a href="tel:89538120099" class="contacts__phone">8 953 812 00 99</a>
