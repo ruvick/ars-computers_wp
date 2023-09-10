@@ -49,6 +49,23 @@
 <div class="catalog-product__row">
 
 <div class="product__column catalog-product__column">
+<?php if (have_posts()) { while (have_posts()) { the_post(); ?>
+<div class="product__card">
+	<a href="<?php echo get_permalink();?>" class="product__card-img _ibg"> 
+		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
+	</a>
+	<div class="product__card-descp">
+		<h6 class="product__card-descp-title">
+			<?php echo $post->post_title?>
+		</h6>
+	</div>
+	<a href="<?php echo get_permalink();?>" class="product__card-btn btn">Подробнее</a>
+</div>
+<?php } //конец while
+} //конец if ?>
+</div>
+
+<!-- <div class="product__column catalog-product__column">
 <div class="product__card">
 	<a href="single.html" class="product__card-img _ibg"> 
 		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
@@ -60,49 +77,7 @@
 	</div>
 	<a href="single.html" class="product__card-btn btn">Подробнее</a>
 </div>
-</div>
-
-<div class="product__column catalog-product__column">
-<div class="product__card">
-	<a href="single.html" class="product__card-img _ibg">
-		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/05.jpg?_v=1693674569456" alt=""></picture>
-	</a>
-	<div class="product__card-descp">
-		<h6 class="product__card-descp-title">
-			Игровой компьютер AMD Athlon
-		</h6>
-	</div>
-	<a href="single.html" class="product__card-btn btn">Подробнее</a>
-</div>
-</div>
-
-<div class="product__column catalog-product__column">
-<div class="product__card">
-	<a href="single.html" class="product__card-img _ibg">
-		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/06.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/06.jpg?_v=1693674569456" alt=""></picture>
-	</a>
-	<div class="product__card-descp">
-		<h6 class="product__card-descp-title">
-			Системный блок для игр/дома/работы ATHLON 3000G AM4
-		</h6>
-	</div>
-	<a href="single.html" class="product__card-btn btn">Подробнее</a>
-</div>
-</div>
-
-<div class="product__column catalog-product__column">
-<div class="product__card">
-	<a href="single.html" class="product__card-img _ibg"> 
-		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
-	</a>
-	<div class="product__card-descp">
-		<h6 class="product__card-descp-title">
-			Компьютер X-Computers *Business* P0055236
-		</h6>
-	</div>
-	<a href="single.html" class="product__card-btn btn">Подробнее</a>
-</div>
-</div>
+</div> -->
 
 </div>
 

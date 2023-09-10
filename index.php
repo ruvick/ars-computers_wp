@@ -178,6 +178,7 @@
 			</div>
 
 		</div>
+		<?php wp_list_categories( array('child_of' => 6, 'hide_empty'=> 0, 'title_li' => '') ); ?>
 	</div>
 </section>
 
