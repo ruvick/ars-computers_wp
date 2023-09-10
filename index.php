@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('template-parts/header-section');?>
+<?php get_template_part('template-parts/header-section-index');?>
 
 <main class="page">
 
