@@ -32,8 +32,7 @@
 add_action('wp_ajax_newsendr', 'newsendr');
 add_action('wp_ajax_nopriv_newsendr', 'newsendr');
 
-function newsendr()
-{
+function newsendr() {
 	if (empty($_REQUEST['nonce'])) {
 		wp_die('0');
 	}
@@ -42,8 +41,6 @@ function newsendr()
        
 		$send_adr = carbon_get_theme_option('as_email_send'); 
 	
-		
-
 		$subj = "Сообщение с сайта";
 		$content = "<h2>Новое сообщение с сайта</h2>";
 		$content_tg = "Новое сообщение с сайта\n\r";
@@ -53,10 +50,10 @@ function newsendr()
 			$content_tg .= $_REQUEST["fildval"][$i].": ".$_REQUEST[$_REQUEST["fildname"][$i]]."\n\r";
 		}
 
-		message_to_telegram($content_tg);
+		// message_to_telegram($content_tg);
 
 		$headers = array(
-			'From: Сайт Мир Туризма 46 <noreply@mirturizma46.ru>',
+			'From: АРС КОМПЬЮТЕРЫ <noreply@mirturizma46.ru>',
 			'content-type: text/html',
 		);
 
