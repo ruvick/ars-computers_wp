@@ -450,24 +450,31 @@ textarea.input {
 }
 
 ::-webkit-input-placeholder {
-	color: #8584847a;
+	color: #000;
 }
 
 ::-moz-placeholder {
-	color: #8584847a;
+	color: #000;
 }
 
 /* Firefox 19+ */
 
 :-moz-placeholder {
-	color: #8584847a;
+	color: #000;
 }
 
 /* Firefox 18- */
 
 :-ms-input-placeholder {
-	color: #8584847a;
+	color: #000;
 }
+
+input:disabled {
+	cursor: default;
+	color: #000;
+	background-color: #fff;
+}
+
 
 .checkbox {
 	position: relative;
@@ -5310,7 +5317,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 	text-align: center;
 	font-size: 18px;
 	font-weight: 600;
-	margin-top: 80px;
+	/* margin-top: 80px; */
 }
 
 .SendetMsg:before {
@@ -5330,7 +5337,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 .h404 {
 	margin-bottom: 15px;
 }
-
 
 
 
