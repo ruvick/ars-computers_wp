@@ -958,7 +958,6 @@ window.addEventListener('click', e => { // при клике в любом ме�
 		iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
 		menuBody.classList.remove('active')
 		body.classList.remove('_lock')
-		headsearch.classList.remove('_active')
 	}
 })
 

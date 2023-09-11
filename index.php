@@ -60,11 +60,11 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(10);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/01.jpg" alt=""></picture> 
 					</a>
 					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
+						<h4 class="products-sec__card-descp-title"> 
 							Компьютеры
 						</h4>
 						<ul class="products-sec__card-descp-list">
@@ -72,7 +72,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(10);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(11);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/02.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
@@ -92,7 +92,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(11);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
@@ -100,7 +100,7 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(12);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/03.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
@@ -112,7 +112,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(12);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
@@ -120,7 +120,7 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(13);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/04.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
@@ -132,7 +132,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(13);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
@@ -140,7 +140,7 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(14);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/05.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
@@ -152,7 +152,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(14);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
@@ -160,7 +160,7 @@
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="catalog.html" class="products-sec__card-img _ibg">
+					<a href="<?php echo get_category_link(15);?>" class="products-sec__card-img _ibg">
 						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/06.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/06.jpg" alt=""></picture>
 					</a>
 					<div class="products-sec__card-descp">
@@ -172,7 +172,7 @@
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="catalog.html" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="<?php echo get_category_link(15);?>" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
