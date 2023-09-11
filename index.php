@@ -183,44 +183,33 @@
 	</div>
 </section>
 
+<?	$advant = carbon_get_theme_option('complex_advant'); // Вывод из настроек темы
+	if (!empty($advant)) { ?>
 <section class="service section">
 	<div class="nuar_blk"></div>
 	<div class="_container">
 		<h2 class="service__title title">Преимущества</h2>
-
 		<div class="service__row">
-
+		<?
+		$advantIndex = 0;
+		foreach ($advant as $item) {
+			?>
 			<div class="service__column">
 				<div class="service__card">
 					<span class="service__card-icon service__card-icon_01"></span>
-					<h4 class="service__card-title">
-						Официальные поставки и новые комплектующие
-					</h4>
+					<h4 class="service__card-title"><? echo $item['text_advant']; ?></h4>
 				</div>
 			</div>
-
-			<div class="service__column">
-				<div class="service__card">
-					<span class="service__card-icon service__card-icon_02"></span>
-					<h4 class="service__card-title">
-						Контроль качества комплектующих
-					</h4>
-				</div>
-			</div>
-
-			<div class="service__column">
-				<div class="service__card">
-					<span class="service__card-icon service__card-icon_03"></span>
-					<h4 class="service__card-title">
-						Техническая поддержка на протяжении всего срока эксплуатации ПК
-					</h4>
-				</div>
-			</div>
-
+			<?
+			$advantIndex++; 
+		}
+	}
+?>
+<? { ?>
 		</div>
-
 	</div>
-</section>
+</section> 
+<? } ?>
 
 <section class="completed-projects section">
 	<div class="_container">
@@ -242,7 +231,7 @@ if ($page_children->have_posts()) :
 			<div class="completed-projects__column">
 				<a href="<?php the_permalink(); ?>" class="completed-projects__card">
 					<div class="completed-projects__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/completed/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/completed/01.jpg" alt=""></picture>
+						<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
 					</div>
 					<div class="completed-projects__card-descp completed-projects__card-descp_red">
 						<h5 class="completed-projects__card-descp-title"><?php the_title(); ?></h5>

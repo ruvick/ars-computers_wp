@@ -49,7 +49,7 @@ get_header(); ?>
 			<div class="completed-projects__column">
 			<a href="'.get_the_permalink().'" class="completed-projects__card">
 				<div class="completed-projects__card-img _ibg">
-					<picture><source srcset="img/completed/01.webp" type="image/webp"><img src="img/completed/01.jpg?_v=1693674569456" alt=""></picture>
+				<img src="'.get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ).'" alt="<? the_title();?>"> 
 				</div>
 				<div class="completed-projects__card-descp completed-projects__card-descp_red">
 					<h5 class="completed-projects__card-descp-title">'.get_the_title().'</h5>
