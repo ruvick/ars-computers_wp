@@ -2774,9 +2774,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .pagination {
-	-webkit-box-pack: center;
+	/* -webkit-box-pack: center; 
 	-ms-flex-pack: center;
-	justify-content: center;
+	justify-content: center; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 	margin-top: 43px;
 }
 
@@ -2820,6 +2823,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	background-repeat: no-repeat;
 }
 
+.page-numbers,
 .pagination__numbers {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2844,6 +2848,22 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .pagination__numbers:last-child {
 	margin: 0px 0px 0px 0px;
+}
+
+.page-numbers:hover {
+	background: #7FFFD4;
+}
+
+.prev.page-numbers,
+.next.page-numbers {
+	width: auto;
+	padding: 0 10px;
+	transition: all 0.3s ease 0s;
+}
+
+.prev.page-numbers:hover,
+.next.page-numbers:hover {
+	background: #7FFFD4;
 }
 
 .pagination__block-dot {
