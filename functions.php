@@ -406,10 +406,6 @@ function wp_corenavi() {
 // }
 
 
-// Подключение файлов
-require_once( dirname(__FILE__) . '/sender.php'); 
-
-
 /**
  * Возможность загружать изображения для элементов указанных таксономий: категории, метки.
  *
@@ -622,3 +618,9 @@ if( is_admin() && ! class_exists('Term_Meta_Image') ) {
 	}
 }
 
+
+
+
+
+// Подключение файлов
+require_once( dirname(__FILE__) . '/sender.php'); 

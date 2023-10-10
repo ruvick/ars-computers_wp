@@ -214,7 +214,7 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
   // ));
 
   // Container::make('post_meta', 'page-gallery-tkaney-obivki-sidenii', 'Характеристики записи')
-  // ->show_on_template(array('page-gallery-tkaney-obivki-sidenii.php'))
+  // ->show_on_template(array('category.php'))
   //     ->add_fields(array(   
   //     Field::make( 'complex', 'galery_velours', "Велюр" )
   //     ->add_fields( array(

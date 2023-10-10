@@ -94,7 +94,7 @@
 						' . $sub_category->name . '
 						</h4>
 						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 7800р</li>
+							<li class="products-sec__card-descp-list-item">' .category_description($sub_category). '</li>
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
