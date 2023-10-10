@@ -23,11 +23,21 @@
 				<ul class="catalog__sidebar-menu-list">
 					<?php wp_list_categories( array('child_of' => 3, 'orderby' => 'ID', 'order' => 'asc', 'hide_empty'=> 0, 'title_li' => '') ); ?>
 				</ul>
+				<?
+  					$price_product = carbon_get_theme_option('price_product');
+  					$price_service = carbon_get_theme_option('price_service');
+					?>
+				<? if ($price_product || $price_service) {?>
 				<p class="catalog__sidebar-text">Скачайте прайс-лист</p>
-
+				<?}?>
 				<div class="catalog__sidebar-ptice-block">
-					<a href="img/popup.jpg" class="catalog__sidebar-price-link">Продукция</a>
-					<a href="img/popup.jpg" class="catalog__sidebar-price-link">Сервисные услуги</a>
+
+					<? if ($price_product) {?>
+						<a href="<?echo wp_get_attachment_url($price_product);?>" class="catalog__sidebar-price-link">Продукция</a>
+					<?}?>
+					<? if ($price_service) {?>
+						<a href="<?echo wp_get_attachment_url($price_service);?>" class="catalog__sidebar-price-link">Сервисные услуги</a>
+					<?}?>
 				</div>
 			</div>
 
@@ -37,35 +47,21 @@
 <div class="catalog-product__row">
 
 <?php if (have_posts()) { while (have_posts()) { the_post(); ?>
-<div class="product__column catalog-product__column">
-<div class="product__card">
-	<a href="<?php echo get_permalink();?>" class="product__card-img _ibg"> 
-		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
-	</a>
-	<div class="product__card-descp">
-		<h6 class="product__card-descp-title">
-			<?php echo $post->post_title?>
-		</h6>
+	<div class="product__column catalog-product__column">
+		<div class="product__card">
+			<a href="<?php echo get_permalink();?>" class="product__card-img _ibg"> 
+				<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
+			</a>
+			<div class="product__card-descp">
+				<h6 class="product__card-descp-title"> 
+					<?php echo $post->post_title?>
+				</h6>
+			</div>
+			<a href="<?php echo get_permalink();?>" class="product__card-btn btn">Подробнее</a>
+		</div>
 	</div>
-	<a href="<?php echo get_permalink();?>" class="product__card-btn btn">Подробнее</a>
-</div>
-</div>
 <?php } //конец while
 } //конец if ?>
-
-<!-- <div class="product__column catalog-product__column">
-<div class="product__card">
-	<a href="single.html" class="product__card-img _ibg"> 
-		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/leaders/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/leaders/01.jpg?_v=1693674569456" alt=""></picture>
-	</a>
-	<div class="product__card-descp">
-		<h6 class="product__card-descp-title">
-			Компьютер X-Computers *Business* P0055236
-		</h6>
-	</div>
-	<a href="single.html" class="product__card-btn btn">Подробнее</a>
-</div>
-</div> -->
 
 </div>
 

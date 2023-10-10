@@ -5238,7 +5238,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .content h1 {
-	margin-bottom: 15px;
+	margin-bottom: 35px;
 }
 
 .content h2,
@@ -5265,6 +5265,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	margin-bottom: 0;
 }
 
+.wp-block-image,
 .content .wp-block-image.size-large {
 	max-width: 730px;
 	width: 100%;

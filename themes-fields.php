@@ -49,6 +49,10 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         // Field::make("checkbox", "checkbox_stock_title", "Большая картинка, заголовок слева"),
         ))
     ))
+		->add_tab('Прайс-листы в Каталоге', array(
+			Field::make('file', 'price_product', 'Продукция'),
+			Field::make('file', 'price_service', 'Сервисные услуги')
+    ))
     // ->add_tab('Отзывы', array(
     //   Field::make('complex', 'complex_reviews', 'Выводим Отзывы')
     //   // ->set_max(3) // Можно будет выбрать только 5 постов
