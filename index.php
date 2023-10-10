@@ -55,131 +55,59 @@
 <section class="products-sec section">
 	<div class="_container">
 		<h2 class="products-sec__title title">Продукция</h2>
-		
+
 		<div class="products-sec__row">
+		<? 
+			$categories = get_categories(
+				array(
+					'parent' => 0,
+					'orderby' => 'ID', 
+					'order' => 'asc',
+					'hide_empty'=> 0,
+			)
+		);
+			foreach ($categories as $category) {
+			// подкатегории
+			$sub_categories = get_categories(
+				array(
+					'orderby' => 'ID', 
+					'order' => 'asc',
+			'parent' => $category->term_id
+			
+			)
+		);
+			foreach ($sub_categories as $sub_category) {
+				$term_id = $sub_category->term_taxonomy_id;
+				// получим ID картинки из метаполя термина
+				$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
+				// ссылка на полный размер картинки по ID вложения
+				$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+			echo '
 
 			<div class="products-sec__column">
 				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(10);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/01.jpg" alt=""></picture> 
+					<a href="' . get_category_link($sub_category) . '" class="products-sec__card-img _ibg">
+						<img src="'. $image_url .'" alt=""> 
 					</a>
 					<div class="products-sec__card-descp">
 						<h4 class="products-sec__card-descp-title"> 
-							Компьютеры
+						' . $sub_category->name . '
 						</h4>
 						<ul class="products-sec__card-descp-list">
 							<li class="products-sec__card-descp-list-item">от 7800р</li>
 						</ul>
 					</div>
 					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(10);?>" class="products-sec__card-btn-link btn">Подробнее</a>
+						<a href="' . get_category_link($sub_category) . '" class="products-sec__card-btn-link btn">Подробнее</a>
 						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
-			</div>
-
-			<div class="products-sec__column">
-				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(11);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/02.jpg" alt=""></picture>
-					</a>
-					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
-							Принтеры
-						</h4>
-						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 8800 р</li>
-						</ul>
-					</div>
-					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(11);?>" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="products-sec__column">
-				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(12);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/03.jpg" alt=""></picture>
-					</a>
-					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
-							МФУ
-						</h4>
-						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 10 000р</li>
-						</ul>
-					</div>
-					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(12);?>" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="products-sec__column">
-				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(13);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/04.jpg" alt=""></picture>
-					</a>
-					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
-							Ноутбуки
-						</h4>
-						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 30 000р</li>
-						</ul>
-					</div>
-					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(13);?>" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="products-sec__column">
-				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(14);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/05.jpg" alt=""></picture>
-					</a>
-					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
-							Мониторы
-						</h4>
-						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 8000р</li>
-						</ul>
-					</div>
-					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(14);?>" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="products-sec__column">
-				<div class="products-sec__card">
-					<a href="<?php echo get_category_link(15);?>" class="products-sec__card-img _ibg">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/card/06.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/card/06.jpg" alt=""></picture>
-					</a>
-					<div class="products-sec__card-descp">
-						<h4 class="products-sec__card-descp-title">
-							Комплектующие
-						</h4>
-						<ul class="products-sec__card-descp-list">
-							<li class="products-sec__card-descp-list-item">от 5 000р</li>
-						</ul>
-					</div>
-					<div class="products-sec__card-btn">
-						<a href="<?php echo get_category_link(15);?>" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
-					</div>
-				</div>
-			</div>
-
+			</div>';
+				}
+			}
+		?>
 		</div>
-		
+
 	</div>
 </section>
 
