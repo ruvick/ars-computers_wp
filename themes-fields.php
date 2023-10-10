@@ -213,27 +213,17 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
 
   // ));
 
-  // Container::make('post_meta', 'page-gallery-tkaney-obivki-sidenii', 'Характеристики записи')
-  // ->show_on_template(array('category.php'))
+  // Container::make('post_meta', 'category.php', 'Характеристики записи')
+  // ->show_on_template(array('category'))
   //     ->add_fields(array(   
-  //     Field::make( 'complex', 'galery_velours', "Велюр" )
-  //     ->add_fields( array(
-  //       Field::make('image', 'galery_velours_img', 'Изображение' )->set_width(30),
-  //       Field::make('text', 'galery_velours_img_alt', 'alt и title')->set_width(30)        
-  //     ) ),
-
-  //     Field::make( 'complex', 'galery_eco', "Эко-Кожа" )
-  //     ->add_fields( array(
-  //       Field::make('image', 'galery_eco_img', 'Изображение' )->set_width(30),
-  //       Field::make('text', 'galery_eco_img_alt', 'alt и title')->set_width(30)        
-  //     ) ),
-
-  //     Field::make( 'complex', 'galery_leather', "Кожа" )
-  //     ->add_fields( array(
-  //       Field::make('image', 'galery_leather_img', 'Изображение' )->set_width(30),
-  //       Field::make('text', 'galery_leather_img_alt', 'alt и title')->set_width(30)        
-  //     ) ),
-
+	// 			Field::make('file', 'cat_price', 'Прайс-лист'),
   // ));
+
+	Container::make( 'term_meta', __( 'Category Properties' ) )
+->where( 'term_taxonomy', '=', 'category' )
+->add_fields( array(
+	Field::make('file', 'cat_price', 'Прайс-лист'),
+// Field::make( 'image', 'crb_thumb', __( 'Thumbnail' ) ),
+) );
 
 ?>

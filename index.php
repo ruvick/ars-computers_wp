@@ -82,6 +82,8 @@
 				$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
 				// ссылка на полный размер картинки по ID вложения
 				$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+
+				$cat_price = carbon_get_term_meta($term_id, 'cat_price');
 			echo '
 
 			<div class="products-sec__column">
@@ -99,7 +101,7 @@
 					</div>
 					<div class="products-sec__card-btn">
 						<a href="' . get_category_link($sub_category) . '" class="products-sec__card-btn-link btn">Подробнее</a>
-						<a href="img/popup.jpg" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
+						<a href="' . wp_get_attachment_url($cat_price) . '" download class="products-sec__card-btn-link btn btn--price">Прайс-лист</a>
 					</div>
 				</div>
 			</div>';
