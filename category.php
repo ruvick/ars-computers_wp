@@ -50,7 +50,7 @@
 	<div class="product__column catalog-product__column">
 		<div class="product__card">
 			<a href="<?php echo get_permalink();?>" class="product__card-img _ibg"> 
-				<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
+				<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/nophoto.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
 			</a>
 			<div class="product__card-descp">
 				<h6 class="product__card-descp-title"> 
