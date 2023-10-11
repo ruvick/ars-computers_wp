@@ -144,8 +144,8 @@ function my_assets()
 
 	// Подключение стилей 
 
-	$style_version = "1.0.3";
-	$scrypt_version = "1.0.3"; 
+	$style_version = "1.0.5";
+	$scrypt_version = "1.0.5"; 
 
 	// wp_enqueue_style("style-modal", get_template_directory_uri() . "/css/jquery.arcticmodal-0.3.css", array(), $style_version, 'all'); //Модальные окна (стили)
 	// wp_enqueue_style("style-lightbox", get_template_directory_uri() . "/css/lightbox.min.css", array(), $style_version, 'all'); //Лайтбокс (стили)
@@ -628,6 +628,13 @@ function my_custom_login_logo(){
 	h1 a {  background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.png) !important;  }
 	</style>
 	';
+}
+
+// Изменение url логотипа при входе в админку
+add_filter("login_headerurl", "change_admin_logo_url");
+function change_admin_logo_url()
+{
+    return home_url("/");
 }
 
 
