@@ -120,7 +120,6 @@ function change_wp_nav_menu($classes, $args, $depth)
 // === Menu End ========================================================================================================
 
 
-
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(185, 185);
 
@@ -137,6 +136,7 @@ function my_assets_admin()
 	));
 }
 
+
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 add_action('wp_enqueue_scripts', 'my_assets');
 function my_assets()
@@ -144,8 +144,8 @@ function my_assets()
 
 	// Подключение стилей 
 
-	$style_version = "1.0.1";
-	$scrypt_version = "1.0.1"; 
+	$style_version = "1.0.3";
+	$scrypt_version = "1.0.3"; 
 
 	// wp_enqueue_style("style-modal", get_template_directory_uri() . "/css/jquery.arcticmodal-0.3.css", array(), $style_version, 'all'); //Модальные окна (стили)
 	// wp_enqueue_style("style-lightbox", get_template_directory_uri() . "/css/lightbox.min.css", array(), $style_version, 'all'); //Лайтбокс (стили)
@@ -619,7 +619,16 @@ if( is_admin() && ! class_exists('Term_Meta_Image') ) {
 }
 
 
+// Произвольный логотип на странице входа wp-login
+add_action( 'login_head', 'my_custom_login_logo' );
+function my_custom_login_logo(){
 
+	echo '
+	<style type="text/css">
+	h1 a {  background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.png) !important;  }
+	</style>
+	';
+}
 
 
 // Подключение файлов
