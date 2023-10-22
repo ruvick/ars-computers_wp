@@ -4438,6 +4438,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .product__card-descp {
+	display: flex;
+	flex-direction: column;
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
@@ -5365,8 +5367,22 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 	padding-top: 20px;
 }
 
+.product__card-descp-title {
+	word-wrap: break-word;
+	word-break: break-all;
+	margin-bottom: 15px;
+	flex: 1 1 auto;
+	height: 100%;
+}
 
+.product__card-descp-price {
+	font-size: 20px;
+	font-weight: 700;
+}
 
+.product__card-descp-price.rub:after {
+	margin-left: 5px;
+}
 
 
 

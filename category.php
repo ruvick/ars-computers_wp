@@ -56,6 +56,10 @@
 				<h6 class="product__card-descp-title"> 
 					<?php echo $post->post_title?>
 				</h6>
+				<? $prod_price = carbon_get_post_meta(get_the_ID(),"prod_price");
+				if (!empty($prod_price)) { ?>
+				<div class="product__card-descp-price rub"><? echo $prod_price; ?></div>
+				<? } ?>
 			</div>
 			<a href="<?php echo get_permalink();?>" class="product__card-btn btn">Подробнее</a>
 		</div>
